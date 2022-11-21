@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://tianci-king.github.io/2022/11/19/heap/</loc>
+    
+    <lastmod>2022-11-20</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://tianci-king.github.io/2022/11/15/disjoint-set-union/</loc>
+    
+    <lastmod>2022-11-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://tianci-king.github.io/2022/11/04/network-disk-deploy-on-premises/</loc>
     
     <lastmod>2022-11-04</lastmod>
@@ -85,36 +103,57 @@
 
   <url>
     <loc>https://tianci-king.github.io/</loc>
-    <lastmod>2022-11-04</lastmod>
+    <lastmod>2022-11-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
   
   <url>
+    <loc>https://tianci-king.github.io/tags/Algorithm/</loc>
+    <lastmod>2022-11-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://tianci-king.github.io/tags/Disjoint-Set-Union/</loc>
+    <lastmod>2022-11-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://tianci-king.github.io/tags/Euler-Circuit/</loc>
+    <lastmod>2022-11-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://tianci-king.github.io/tags/more/</loc>
-    <lastmod>2022-11-04</lastmod>
+    <lastmod>2022-11-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tianci-king.github.io/tags/technology/</loc>
-    <lastmod>2022-11-04</lastmod>
+    <lastmod>2022-11-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tianci-king.github.io/tags/Alist/</loc>
-    <lastmod>2022-11-04</lastmod>
+    <lastmod>2022-11-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tianci-king.github.io/tags/RaiDrive/</loc>
-    <lastmod>2022-11-04</lastmod>
+    <lastmod>2022-11-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -122,15 +161,29 @@
 
   
   <url>
+    <loc>https://tianci-king.github.io/categories/Algorithm/</loc>
+    <lastmod>2022-11-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://tianci-king.github.io/categories/Diary/</loc>
-    <lastmod>2022-11-04</lastmod>
+    <lastmod>2022-11-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://tianci-king.github.io/categories/Algorithm/Math/</loc>
+    <lastmod>2022-11-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tianci-king.github.io/categories/Technology/</loc>
-    <lastmod>2022-11-04</lastmod>
+    <lastmod>2022-11-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>

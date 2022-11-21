@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="contact, TianciのBlog">
+    <meta name="keywords" content="并查集（DSU）, TianciのBlog">
     <meta name="description" content="A Blog designed by Tianci">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>contact | TianciのBlog</title>
+    <title>并查集（DSU） | TianciのBlog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -313,12 +313,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">contact</h1>
+                    <h1 class="description center-align post-title">并查集（DSU）</h1>
                 </div>
             </div>
         </div>
@@ -432,12 +432,37 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Algorithm/">
+                                <span class="chip bg-color">Algorithm</span>
+                            </a>
+                        
+                            <a href="/tags/Disjoint-Set-Union/">
+                                <span class="chip bg-color">Disjoint Set Union</span>
+                            </a>
+                        
+                            <a href="/tags/Euler-Circuit/">
+                                <span class="chip bg-color">Euler Circuit</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Algorithm/" class="post-category">
+                                Algorithm
+                            </a>
+                        
+                            <a href="/categories/Algorithm/Math/" class="post-category">
+                                Math
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -446,28 +471,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-11-01
+                    2022-11-15
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-11-01
+                    2022-11-15
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    0
+                    422
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 
@@ -487,7 +512,16 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <h1 id="并查集"><a href="#并查集" class="headerlink" title="并查集"></a>并查集</h1><h2 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h2><p>​    在 计算机科学 中， 并查集 （英文：Disjoint-set data structure，直译为不交集数据结构）是一种 数据结构 ，用于处理一些 不交集 （Disjoint sets，一系列没有重复元素的集合）的合并及查询问题。</p>
+<p>（1）查询：查询某个元素属于哪个集合，通常是返回集合内的一个”代表元素”。. 这个操作是为了判断两个元素是否在同一个集合之中。</p>
+<p>（2）合并：将两个集合合并为一个。</p>
+<h2 id="算法实现"><a href="#算法实现" class="headerlink" title="算法实现"></a>算法实现</h2><h3 id="（1）初始化"><a href="#（1）初始化" class="headerlink" title="（1）初始化"></a>（1）初始化</h3><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+
+
+
+
+
+<h2 id="典例"><a href="#典例" class="headerlink" title="典例"></a>典例</h2><figure class="highlight c++"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//确定无向图欧拉回路的充要条件：除孤立节点外，其它节点满足 1.连通 2.度为偶数</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> f[<span class="number">1005</span>]={};</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">init</span><span class="params">(<span class="type">int</span> n)</span></span>{  <span class="comment">//初始化</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++){</span><br><span class="line">        f[i] = i;</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">find</span><span class="params">(<span class="type">int</span> x)</span></span>{  <span class="comment">//寻找父节点</span></span><br><span class="line">    <span class="keyword">if</span>(x == f[x]){</span><br><span class="line">        <span class="keyword">return</span> x;</span><br><span class="line">    }<span class="keyword">else</span>{</span><br><span class="line">        f[x] = <span class="built_in">find</span>(f[x]);</span><br><span class="line">        <span class="keyword">return</span> f[x];</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">merge</span><span class="params">(<span class="type">int</span> i ,<span class="type">int</span> j)</span></span>{ <span class="comment">//合并</span></span><br><span class="line">    f[<span class="built_in">find</span>(i)] = <span class="built_in">find</span>(j);</span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>{</span><br><span class="line">    <span class="type">int</span> n,m;</span><br><span class="line">    <span class="keyword">while</span>(std::cin&gt;&gt;n&gt;&gt;m){</span><br><span class="line">        <span class="built_in">init</span>(n);</span><br><span class="line">        <span class="type">int</span> du[<span class="number">1005</span>];</span><br><span class="line">        std::<span class="built_in">fill</span>(du,du+<span class="number">1001</span>,<span class="number">0</span>);</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=m;i++){</span><br><span class="line">            <span class="type">int</span> a,b;</span><br><span class="line">            std::cin&gt;&gt;a&gt;&gt;b;</span><br><span class="line">            du[a]++;</span><br><span class="line">            du[b]++;</span><br><span class="line">            <span class="built_in">merge</span>(a,b);</span><br><span class="line">        }</span><br><span class="line">        <span class="comment">//如果度不是偶数必不是欧拉回路</span></span><br><span class="line">        <span class="type">int</span> tmp=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++){</span><br><span class="line">            <span class="keyword">if</span>(du[i] % <span class="number">2</span> == <span class="number">1</span>){</span><br><span class="line">                tmp++;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">if</span>(tmp&gt;<span class="number">0</span>){</span><br><span class="line">            std::cout&lt;&lt;<span class="string">"No"</span>&lt;&lt;<span class="string">"\n"</span>;</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        }</span><br><span class="line">        <span class="comment">//寻找第一个非孤立点当起点</span></span><br><span class="line">        <span class="type">int</span> point;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++){</span><br><span class="line">            <span class="keyword">if</span>(du[i] != <span class="number">0</span>){</span><br><span class="line">                point = i;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        <span class="type">int</span> f_point = <span class="built_in">find</span>(point);</span><br><span class="line">        <span class="type">bool</span> flag = <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++){</span><br><span class="line">            <span class="keyword">if</span>(<span class="built_in">find</span>(i) != f_point &amp;&amp; <span class="built_in">find</span>(i) != i){</span><br><span class="line">                flag = <span class="literal">true</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">if</span>(flag){</span><br><span class="line">            std::cout&lt;&lt;<span class="string">"No"</span>&lt;&lt;<span class="string">"\n"</span>;</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">if</span>(n != <span class="number">0</span>){</span><br><span class="line">            std::cout&lt;&lt;<span class="string">"Yes"</span>&lt;&lt;<span class="string">"\n"</span>;</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
                 
             </div>
             <hr/>
@@ -513,7 +547,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://tianci-king.github.io/contact/index.html">https://tianci-king.github.io/contact/index.html</a>
+                    <a href="https://tianci-king.github.io/2022/11/15/disjoint-set-union/">https://tianci-king.github.io/2022/11/15/disjoint-set-union/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -550,7 +584,19 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/Algorithm/">
+                                    <span class="chip bg-color">Algorithm</span>
+                                </a>
+                            
+                                <a href="/tags/Disjoint-Set-Union/">
+                                    <span class="chip bg-color">Disjoint Set Union</span>
+                                </a>
+                            
+                                <a href="/tags/Euler-Circuit/">
+                                    <span class="chip bg-color">Euler Circuit</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -718,18 +764,17 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/contact/index.html">
+                <a href="/2022/11/19/heap/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="contact">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="heap">
                         
-                        <span class="card-title">contact</span>
+                        <span class="card-title">heap</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -739,9 +784,9 @@
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-11-01
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-11-19
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -750,7 +795,6 @@
                         </span>
                     </div>
                 </div>
-
                 
             </div>
         </div>
@@ -758,37 +802,56 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/contact/index.html">
+                <a href="/2022/11/04/network-disk-deploy-on-premises/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="contact">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="网盘挂载到本地的部署方法">
                         
-                        <span class="card-title">contact</span>
+                        <span class="card-title">网盘挂载到本地的部署方法</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            将“大象”装到冰箱里再也不需要三步力~ （本地操作一键存读，省心省力
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-11-01
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-11-04
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Tianci
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Technology/" class="post-category">
+                                    Technology
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/technology/">
+                        <span class="chip bg-color">technology</span>
+                    </a>
+                    
+                    <a href="/tags/Alist/">
+                        <span class="chip bg-color">Alist</span>
+                    </a>
+                    
+                    <a href="/tags/RaiDrive/">
+                        <span class="chip bg-color">RaiDrive</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>

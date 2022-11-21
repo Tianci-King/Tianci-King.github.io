@@ -1,3 +1,5 @@
+https://tianci-king.github.io/2022/11/19/heap/
+https://tianci-king.github.io/2022/11/15/disjoint-set-union/
 https://tianci-king.github.io/2022/11/04/network-disk-deploy-on-premises/
 https://tianci-king.github.io/2022/11/01/first-blog/
 https://tianci-king.github.io/404/index.html
@@ -8,9 +10,14 @@ https://tianci-king.github.io/tags/index.html
 https://tianci-king.github.io/categories/index.html
 https://tianci-king.github.io/2022/11/01/hello-world/
 https://tianci-king.github.io/
+https://tianci-king.github.io/tags/Algorithm/
+https://tianci-king.github.io/tags/Disjoint-Set-Union/
+https://tianci-king.github.io/tags/Euler-Circuit/
 https://tianci-king.github.io/tags/more/
 https://tianci-king.github.io/tags/technology/
 https://tianci-king.github.io/tags/Alist/
 https://tianci-king.github.io/tags/RaiDrive/
+https://tianci-king.github.io/categories/Algorithm/
 https://tianci-king.github.io/categories/Diary/
+https://tianci-king.github.io/categories/Algorithm/Math/
 https://tianci-king.github.io/categories/Technology/
