@@ -30,9 +30,9 @@
     <script src="/libs/jquery/jquery.min.js"></script>
 
 
-<meta name="generator" content="Hexo 6.3.0">
-<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="TiancyのBlog" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="TiancyのBlog" type="application/atom+xml">
+
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 
@@ -473,14 +473,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-10-06
+                    2023-12-23
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    843
+                    806
                 </div>
                 
 
@@ -514,7 +514,6 @@
 <p>因为工作的疏忽，<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1194y1r7WW/">精弘网络暑期前端授课视频</a>中 5:03的关于EsLint的配置环境的教程，有部分内容是错误的，可能会误导到听课的同学。为此我感到十分抱歉，所以特此出一篇博客，纠正这个问题，还望大家海涵。</p>
 </blockquote>
 <h2 id="一、Webstorm安装插件"><a href="#一、Webstorm安装插件" class="headerlink" title="一、Webstorm安装插件"></a>一、Webstorm安装插件</h2><p>前往设置-插件，搜索如下图片的关键字，安装EsLint所需要的插件</p>
-<p><img src="https://download.tooc.xlj0.com/uploads/174/TiancyBlog/fix-eslint-in-webstorm/image-20230829143225420.png" alt="设置-插件"></p>
 <h2 id="二、根目录下编辑-Eslint配置文件"><a href="#二、根目录下编辑-Eslint配置文件" class="headerlink" title="二、根目录下编辑 Eslint配置文件"></a>二、根目录下编辑 Eslint配置文件</h2><p>首先我们要知道的是，在eslint中，<strong>插件会自动检索根目录下面的配置文件</strong>作为EsLint的配置规则，顺序是</p>
 <ol>
 <li>.eslintrc.js </li>
@@ -563,8 +562,7 @@
 <p>另外值得一提的是，为什么在二者只能选其一的情况下，我们不使用EsLint –init，而更推荐大家直接使用上面的.cjs文件来配置EsLint呢？</p>
 <p>因为EsLint –init配置出来的规则是最基础的规范，而上面的.cjs则是精弘一直使用的团队规范，虽然不能保证是最好的规则，但也至少比–init的要好。而且最主要的原因是，在这个Demo中，我们使用的就是精弘网络要求的规范和技术栈，使用–init创建的规范文件，可能在这个Demo中会存在不适配和报错的情况。</p>
 <h2 id="三、Eslint具体设置"><a href="#三、Eslint具体设置" class="headerlink" title="三、Eslint具体设置"></a>三、Eslint具体设置</h2><p>设置左上角输入Eslint就可以跳转到这个界面，选择  <strong>手动/自动</strong> 均可</p>
-<p>下面都不用动，都会自动匹配到.cjs的规则：</p>
-<p><img src="https://download.tooc.xlj0.com/uploads/174/TiancyBlog/fix-eslint-in-webstorm/image-20230829143114956.png" alt="设置EsLint"></p>
+<p>下面都不用动，都会自动匹配到.cjs的规则。</p>
 <h2 id="四、补全Eslint所需要的依赖"><a href="#四、补全Eslint所需要的依赖" class="headerlink" title="四、补全Eslint所需要的依赖"></a>四、补全Eslint所需要的依赖</h2><p>.cjs中所需要的规则需要额外添加一些关于EsLint的依赖环境，</p>
 <p>请在<code>package.json</code>中按照如下补全依赖,检查是否有缺失的依赖，无误后<code>pnpm i</code>：</p>
 <pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">{</span>
@@ -602,9 +600,7 @@
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><code>pnpm install</code>以后，重启WebStorm。</p>
-<h2 id="四、展示"><a href="#四、展示" class="headerlink" title="四、展示"></a>四、展示</h2><p><img src="https://download.tooc.xlj0.com/uploads/174/TiancyBlog/fix-eslint-in-webstorm/image-20230829143517623.png" alt="效果展示"></p>
-<p>比方这里少加了分号，已经有eslint的提示报错了，说明成功了，点击修复semi 即可自动修复补全分号。</p>
-<p>另外如果你在设置的eslint里勾选了eslint –fix，ctrl+s保存时也可以自动修复。</p>
+<h2 id="四、写在后面"><a href="#四、写在后面" class="headerlink" title="四、写在后面"></a>四、写在后面</h2><p>另外如果你在设置的eslint里勾选了eslint –fix，ctrl+s保存时也可以自动修复。</p>
 
                 
             </div>
@@ -848,31 +844,31 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2023/09/20/domain-name-application/">
+                <a href="/2023/10/13/macbook-swap-off/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="博客域名注册和解析教程">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="MacBook 关闭虚拟内存(交换内存 SwapMemory)">
                         
-                        <span class="card-title">博客域名注册和解析教程</span>
+                        <span class="card-title">MacBook 关闭虚拟内存(交换内存 SwapMemory)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            年付仅一刀的域名，不试试看吗？
+                            MacBook SWAP 策略太激进，SSD磨损怎么办😰
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-09-20
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-10-13
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%88%B1%E7%9E%8E%E6%8A%98%E8%85%BE/" class="post-category">
-                                    爱瞎折腾
+                            <a href="/categories/MAC%E8%B0%83%E6%95%99/" class="post-category">
+                                    MAC调教
                                 </a>
                             
                             
@@ -882,12 +878,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Namesilo/">
-                        <span class="chip bg-color">Namesilo</span>
+                    <a href="/tags/MacBook/">
+                        <span class="chip bg-color">MacBook</span>
                     </a>
                     
-                    <a href="/tags/Domain-Name/">
-                        <span class="chip bg-color">Domain Name</span>
+                    <a href="/tags/Swap/">
+                        <span class="chip bg-color">Swap</span>
                     </a>
                     
                 </div>
@@ -901,31 +897,31 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/12/28/surface-go-2/">
+                <a href="/2022/11/01/first-blog/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="苏菲狗二代（surface Go2）">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="第一篇博客">
                         
-                        <span class="card-title">苏菲狗二代（surface Go2）</span>
+                        <span class="card-title">第一篇博客</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            你的下一台iPad何必是iPad（喜）
+                            And now, as you graduate to begin a new, I wish that for you. Stay Hungry, Stay Foolish.    --Steve Jobs
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-12-28
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-11-01
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%94%B5%E5%AD%90%E5%9E%83%E5%9C%BE/" class="post-category">
-                                    电子垃圾
+                            <a href="/categories/%E9%9A%8F%E7%AC%94%E6%8B%BE%E9%81%97/" class="post-category">
+                                    随笔拾遗
                                 </a>
                             
                             
@@ -935,12 +931,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%B9%B3%E6%9D%BF%E7%94%B5%E8%84%91/">
-                        <span class="chip bg-color">平板电脑</span>
-                    </a>
-                    
-                    <a href="/tags/surface-GO-2/">
-                        <span class="chip bg-color">surface GO 2</span>
+                    <a href="/tags/Hexo/">
+                        <span class="chip bg-color">Hexo</span>
                     </a>
                     
                 </div>
@@ -1167,7 +1159,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">7.1k</span>&nbsp;字
+                class="white-color">3.1k</span>&nbsp;字
             
             
             
