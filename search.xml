@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>eslint-line-feed-code</title>
+      <link href="/2024/01/26/eslint-line-feed-code/"/>
+      <url>/2024/01/26/eslint-line-feed-code/</url>
+      
+        <content type="html"><![CDATA[<h1 id="情况复现"><a href="#情况复现" class="headerlink" title="情况复现"></a>情况复现</h1><p><img src="/.io//0366fcf74ed8d0eb659429af88de4b6d.jpg" alt="0366fcf74ed8d0eb659429af88de4b6d"></p><p>在项目中使用 Eslint 有一条规范：</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token string">"linebreak-style"</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span><span class="token string">"error"</span>, <span class="token string">"unix"</span><span class="token punctuation">]</span>,<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>这个规则的意思是<code>回车换行</code>符使用unix风格的，也就是<code>LF</code>。unix 其实主要就是指 mac ，或者 ubuntu 这类的。本来团队都用Mac就没啥问题。但如果你用的是 windows 。就会有标题中的错误。虽然看起来没区别但是在项目中的两者编码是不一样的，这会被 Eslint 报错，全屏通红。</p><h1 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h1><p>项目中应该还有一个<code>.editorconfig</code>文件，如果没有，你就自己添加一个，并输入如下：</p><pre class="line-numbers language-editorconfig" data-language="editorconfig"><code class="language-editorconfig"><span class="token comment"># http://editorconfig.org  </span><span class="token key attr-name">root</span> <span class="token value attr-value"><span class="token punctuation">=</span> true  </span>  <span class="token section selector"><span class="token punctuation">[</span><span class="token operator">*</span><span class="token punctuation">]</span></span>  <span class="token comment"># 缩进使用空格</span><span class="token key attr-name">indent_style</span> <span class="token value attr-value"><span class="token punctuation">=</span> space</span><span class="token comment"># 缩进2个字符</span><span class="token key attr-name">indent_size</span> <span class="token value attr-value"><span class="token punctuation">=</span> 2</span><span class="token comment"># 行结尾使用 lf !!!!</span><span class="token key attr-name">end_of_line</span> <span class="token value attr-value"><span class="token punctuation">=</span> lf</span><span class="token comment"># 删除行尾空格</span><span class="token key attr-name">trim_trailing_whitespace</span> <span class="token value attr-value"><span class="token punctuation">=</span> true</span><span class="token comment"># 文件结尾添加一个空行</span><span class="token key attr-name">insert_final_newline</span> <span class="token value attr-value"><span class="token punctuation">=</span> true</span><span class="token comment"># 行最大长度</span><span class="token key attr-name">max_line_length</span> <span class="token value attr-value"><span class="token punctuation">=</span> 100</span><span class="token comment"># 编码采用 utf-8</span><span class="token key attr-name">charset</span> <span class="token value attr-value"><span class="token punctuation">=</span> utf-8</span><span class="token section selector"><span class="token punctuation">[</span><span class="token operator">*</span>.md<span class="token punctuation">]</span></span>  <span class="token key attr-name">trim_trailing_whitespace</span> <span class="token value attr-value"><span class="token punctuation">=</span> false</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>正常情况下，这个文件会约束当前的项目的书写规范。但为什么了windows下没生效呢？因为这个文件需要你的编辑器支持。换言之你需要安装插件！</p><p>在vscode中，可以直接搜索 <strong>editorconfig</strong> 。安装后重启即可。而在 Webstorm 中则自带该插件</p><p>值得注意的是，你可能发现仍旧没有生效。因为你还需要保存下报错的文件。</p><p>最后，还有一种解决方法，比如添加规则如下</p><pre class="line-numbers language-Shell" data-language="Shell"><code class="language-Shell">'linebreak-style':[0,'error','window'],<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>其实这是相当于windows下关闭了换行的规则。这是很不优雅的。</p><p>当然其实关闭也是可以的，因为git会在你提交的时候帮你把CRLF转成LF。我这里亲测本地上传时候是CRLF，再从gitlab上直接下载下来（不是克隆下来，也就是不走git），打开查看就是LF。想想也是，如果你上传的和别人的不一致，那岂不各种冲突。</p><p>最后的最后…有些时候直接选择关闭是很无奈的，比如你的项目下clone的时候git已经把lf转换为了crlf，那么当你再看开启editorconfig的配置之后，就会在修改并保存文件的时候修改换行符，也就是导致文件都被修改。所以如果想优雅的解决这个问题。还需要先配置git不自动转换crlf。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> EsLint </tag>
+            
+            <tag> Editorconfig </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>MacBook 查询SSD硬盘读写量</title>
       <link href="/2023/10/13/macbook-ssd-check/"/>
       <url>/2023/10/13/macbook-ssd-check/</url>
@@ -74,9 +101,9 @@
       
         <tags>
             
-            <tag> WebStorm </tag>
-            
             <tag> EsLint </tag>
+            
+            <tag> WebStorm </tag>
             
         </tags>
       
@@ -89,7 +116,7 @@
       <link href="/2022/11/01/first-blog/"/>
       <url>/2022/11/01/first-blog/</url>
       
-        <content type="html"><![CDATA[<blockquote><p><strong>“求知若饥，虚心若愚”</strong></p><p>——Steve Jobs</p></blockquote><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>  这是我的第一个博客，也是参加精弘网络后作为小部员的第二个小作业项目。</p><h1 id="搭建过程"><a href="#搭建过程" class="headerlink" title="搭建过程"></a>搭建过程</h1><h2 id="一、Hexo搭建博客"><a href="#一、Hexo搭建博客" class="headerlink" title="一、Hexo搭建博客"></a>一、Hexo搭建博客</h2><p>通过查阅Google以后，我得知常见的博客搭建有两种方法，其一就是我目前采用的 <strong>Hexo</strong> ，另外一种是     <strong>Wordpress</strong> 。</p><p> <strong>Hexo</strong> 非常出色的一点是：能快速部署在<strong>Github</strong>上， 挂载到** <strong>Github</strong> <strong>pages</strong> ， 帮我省下<del>去阿某云租云服务器的钱</del> 部署到云上的时间，省时省力。因此我最后采用 **Hexo ** 搭建我的博客。</p><p>通过以下的文档，很快就能搭建完成</p><ol><li><p><a href="https://hexo.io/zh-cn/docs/">文档 | Hexo</a></p></li><li><p><a href="https://zhuanlan.zhihu.com/p/552639819">2022【保姆级教程】含泪搭建hexo博客 - 知乎 (zhihu.com)</a></p></li></ol><h2 id="二、购买域名"><a href="#二、购买域名" class="headerlink" title="二、购买域名"></a>二、购买域名</h2><p> 由于我没有选择国内的云服务器搭建个人博客，<strong>所以我省去了国内建站备案的繁琐过程，也不需要在国内高额购买域名</strong> ， 我前往</p><p><a href="https://www.namesilo.com/">https://www.namesilo.com/</a></p><p><img src="https://download.tooc.xlj0.com/uploads/174/TiancyBlog/first-blog/logo.png" alt="NameSilo图标"></p><p>购买了一个域名，并进行了DNS解析。</p><p>然后就可以通过访问我购买的域名来访问我的博客了。</p><h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><p>  之后应该会把在精弘的学习笔记陆续上传，权且作为自己的“知识仓库”，也能记录一些自己的心得与大家分享。</p><p>  当然生活中的一些随笔琐事亦会在此略加记录，把这里当作吐槽负面情绪的树洞也未尝不可。</p><hr><p>  <strong>以上，可以算是我的博客的第一篇札记。</strong></p><p>​</p><p>​共勉！</p><p><strong>Location:</strong></p><p>​尚德园，ZJUT</p><p><strong>Date:</strong></p><p>​2022/11/01 午后</p>]]></content>
+        <content type="html"><![CDATA[<blockquote><p><strong>“求知若饥，虚心若愚”</strong></p><p>——Steve Jobs</p></blockquote><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>  这是我的第一个博客，也是参加精弘网络后作为小部员的第二个小作业项目。</p><h1 id="搭建过程"><a href="#搭建过程" class="headerlink" title="搭建过程"></a>搭建过程</h1><h2 id="一、Hexo搭建博客"><a href="#一、Hexo搭建博客" class="headerlink" title="一、Hexo搭建博客"></a>一、Hexo搭建博客</h2><p>通过查阅Google以后，我得知常见的博客搭建有两种方法，其一就是我目前采用的 <strong>Hexo</strong> ，另外一种是     <strong>Wordpress</strong> 。</p><p> <strong>Hexo</strong> 非常出色的一点是：能快速部署在<strong>Github</strong>上， 挂载到** <strong>Github</strong> <strong>pages</strong> ， 帮我省下<del>去阿某云租云服务器的钱</del> 部署到云上的时间，省时省力。因此我最后采用 **Hexo ** 搭建我的博客。</p><p>通过以下的文档，很快就能搭建完成</p><ol><li><p><a href="https://hexo.io/zh-cn/docs/">文档 | Hexo</a></p></li><li><p><a href="https://zhuanlan.zhihu.com/p/552639819">2022【保姆级教程】含泪搭建hexo博客 - 知乎 (zhihu.com)</a></p></li></ol><h2 id="二、购买域名"><a href="#二、购买域名" class="headerlink" title="二、购买域名"></a>二、购买域名</h2><p> 由于我没有选择国内的云服务器搭建个人博客，<strong>所以我省去了国内建站备案的繁琐过程，也不需要在国内高额购买域名</strong> ， 我前往</p><p><a href="https://www.namesilo.com/">https://www.namesilo.com/</a></p><p>购买了一个域名，并进行了DNS解析。</p><p>然后就可以通过访问我购买的域名来访问我的博客了。</p><h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><p>  之后应该会把在精弘的学习笔记陆续上传，权且作为自己的“知识仓库”，也能记录一些自己的心得与大家分享。</p><p>  当然生活中的一些随笔琐事亦会在此略加记录，把这里当作吐槽负面情绪的树洞也未尝不可。</p><hr><p>  <strong>以上，可以算是我的博客的第一篇札记。</strong></p><p>​</p><p>​共勉！</p><p><strong>Location:</strong></p><p>​尚德园，ZJUT</p><p><strong>Date:</strong></p><p>​2022/11/01 午后</p>]]></content>
       
       
       <categories>
