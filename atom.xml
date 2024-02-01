@@ -6,7 +6,7 @@
   <link href="https://tianci-king.github.io/atom.xml" rel="self"/>
   
   <link href="https://tianci-king.github.io/"/>
-  <updated>2024-01-26T02:02:06.794Z</updated>
+  <updated>2024-02-01T14:01:37.838Z</updated>
   <id>https://tianci-king.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>java-multi-version-switching-trick</title>
+    <link href="https://tianci-king.github.io/2024/02/01/java-multi-version-switching-trick/"/>
+    <id>https://tianci-king.github.io/2024/02/01/java-multi-version-switching-trick/</id>
+    <published>2024-02-01T13:57:01.000Z</published>
+    <updated>2024-02-01T14:01:37.838Z</updated>
+    
+    <content type="html"><![CDATA[<pre class="line-numbers language-zsh" data-language="zsh"><code class="language-zsh">vim ~/.bash_profile<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>在 .bash_profile 中加入 Java config：</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># Java config</span><span class="token builtin class-name">export</span> <span class="token assign-left variable">JAVA_8_HOME</span><span class="token operator">=</span><span class="token string">"/Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home"</span><span class="token builtin class-name">export</span> <span class="token assign-left variable">JAVA_17_HOME</span><span class="token operator">=</span><span class="token string">"/Library/Java/JavaVirtualMachines/jdk-17.jdk/Contents/Home"</span><span class="token comment"># config alias</span><span class="token builtin class-name">alias</span> <span class="token assign-left variable">jdk8</span><span class="token operator">=</span><span class="token string">"export JAVA_HOME=<span class="token variable">$JAVA_8_HOME</span>"</span><span class="token builtin class-name">alias</span> <span class="token assign-left variable">jdk17</span><span class="token operator">=</span><span class="token string">"export JAVA_HOME=<span class="token variable">$JAVA_17_HOME</span>"</span><span class="token comment"># config default jdk</span><span class="token builtin class-name">export</span> <span class="token assign-left variable">JAVA_HOME</span><span class="token operator">=</span><span class="token variable">$JAVA_17_HOME</span><span class="token builtin class-name">export</span> <span class="token assign-left variable"><span class="token environment constant">PATH</span></span><span class="token operator">=</span><span class="token string">"<span class="token variable">$JAVA_HOME</span>:<span class="token environment constant">$PATH</span>"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>修改保存上述配置，对bash_profile进行编译生效：</p><pre class="line-numbers language-zsh" data-language="zsh"><code class="language-zsh">source ~/.bash_profile<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>打开终端，输入 <code>jdk8</code> 或者 <code>jdk17</code> 即可手动切换 java 版本：</p><p><img src="/2024/02/01/java-multi-version-switching-trick/image-20240201220106917.png" alt="image-20240201220106917"></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;pre class=&quot;line-numbers language-zsh&quot; data-language=&quot;zsh&quot;&gt;&lt;code class=&quot;language-zsh&quot;&gt;vim ~/.bash_profile&lt;span aria-hidden=&quot;true&quot; class=&quot;lin</summary>
+      
+    
+    
+    
+    <category term="MAC调教" scheme="https://tianci-king.github.io/categories/MAC%E8%B0%83%E6%95%99/"/>
+    
+    
+    <category term="Java" scheme="https://tianci-king.github.io/tags/Java/"/>
+    
+  </entry>
   
   <entry>
     <title>Eslint 的换行编码报错</title>
@@ -116,9 +140,9 @@
     <category term="前端学习" scheme="https://tianci-king.github.io/categories/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/"/>
     
     
-    <category term="WebStorm" scheme="https://tianci-king.github.io/tags/WebStorm/"/>
-    
     <category term="EsLint" scheme="https://tianci-king.github.io/tags/EsLint/"/>
+    
+    <category term="WebStorm" scheme="https://tianci-king.github.io/tags/WebStorm/"/>
     
   </entry>
   
