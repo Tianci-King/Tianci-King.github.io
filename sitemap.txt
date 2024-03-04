@@ -7,8 +7,8 @@ https://tianci-king.github.io/2023/10/13/macbook-ssd-check/
 https://tianci-king.github.io/tags/index.html
 https://tianci-king.github.io/contact/index.html
 https://tianci-king.github.io/friends/index.html
-https://tianci-king.github.io/categories/index.html
 https://tianci-king.github.io/about/index.html
+https://tianci-king.github.io/categories/index.html
 https://tianci-king.github.io/404/index.html
 https://tianci-king.github.io/
 https://tianci-king.github.io/tags/EsLint/
