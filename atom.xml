@@ -6,7 +6,7 @@
   <link href="https://tianci-king.github.io/atom.xml" rel="self"/>
   
   <link href="https://tianci-king.github.io/"/>
-  <updated>2024-03-04T10:28:28.801Z</updated>
+  <updated>2024-03-04T10:32:04.187Z</updated>
   <id>https://tianci-king.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://tianci-king.github.io/2024/02/01/java-multi-version-switching-trick/"/>
     <id>https://tianci-king.github.io/2024/02/01/java-multi-version-switching-trick/</id>
     <published>2024-02-01T13:57:01.000Z</published>
-    <updated>2024-03-04T10:28:28.801Z</updated>
+    <updated>2024-03-04T10:32:04.187Z</updated>
     
     <content type="html"><![CDATA[<pre class="line-numbers language-zsh" data-language="zsh"><code class="language-zsh">vim ~/.bash_profile<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>在 .bash_profile 中加入 Java config：</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># Java config</span><span class="token builtin class-name">export</span> <span class="token assign-left variable">JAVA_8_HOME</span><span class="token operator">=</span><span class="token string">"/Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home"</span><span class="token builtin class-name">export</span> <span class="token assign-left variable">JAVA_17_HOME</span><span class="token operator">=</span><span class="token string">"/Library/Java/JavaVirtualMachines/jdk-17.jdk/Contents/Home"</span><span class="token comment"># config alias</span><span class="token builtin class-name">alias</span> <span class="token assign-left variable">jdk8</span><span class="token operator">=</span><span class="token string">"export JAVA_HOME=<span class="token variable">$JAVA_8_HOME</span>"</span><span class="token builtin class-name">alias</span> <span class="token assign-left variable">jdk17</span><span class="token operator">=</span><span class="token string">"export JAVA_HOME=<span class="token variable">$JAVA_17_HOME</span>"</span><span class="token comment"># config default jdk</span><span class="token builtin class-name">export</span> <span class="token assign-left variable">JAVA_HOME</span><span class="token operator">=</span><span class="token variable">$JAVA_17_HOME</span><span class="token builtin class-name">export</span> <span class="token assign-left variable"><span class="token environment constant">PATH</span></span><span class="token operator">=</span><span class="token string">"<span class="token variable">$JAVA_HOME</span>:<span class="token environment constant">$PATH</span>"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>修改保存上述配置，对bash_profile进行编译生效：</p><pre class="line-numbers language-zsh" data-language="zsh"><code class="language-zsh">source ~/.bash_profile<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>打开终端，输入 <code>jdk8</code> 或者 <code>jdk17</code> 即可手动切换 java 版本：</p><p><img src="/2024/02/01/java-multi-version-switching-trick/image-20240201220106917.png" alt="image-20240201220106917"></p>]]></content>
     
