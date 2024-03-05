@@ -484,7 +484,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    783
+                    861
                 </div>
                 
 
@@ -515,10 +515,12 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <blockquote>
-<p>如果您是 macOS 用户，又如果您恰好选修的一门 数据库原理 的课程需要使用 opengauss 数据库，又如果您恰好在 mac 上有 linux 环境并对 Docker 操作略微熟悉。那么您可以花费 5 分钟左右的时间照着本文做，在 macOS 上搭建 opengauss 以便学习使用。</p>
-<p>另外，作者与好朋友亲测OpenGauss 的 ARM Docker 镜像 在 macOS 上无法使用，请不要浪费您宝贵的时间，尝试在 macOS 使用 Docker 安装，因此，本文在 Parallels Desktop  Unbuntu 22.04 上用 Docker 安装 OpenGauss 。</p>
-<p>如果您成功在 macOS 上 用 Docker 运行了opengauss 5.0.0及以上的版本，不吝赐教，感谢。</p>
+<p>如果您是 macOS 用户，又如果您恰好目前选修的一门 数据库原理 的课程需要使用华为“自研”的国产 opengauss 数据库，又如果您正准备安装 opengauss 环境。那么您可以花费 5 分钟左右的时间照着本文搭建 opengauss 以便学习使用。</p>
+<p>另外，作者与好朋友亲测 OpenGauss 的 ARM Docker 镜像 在 macOS 上无法使用，请不要浪费您宝贵的时间，尝试在 macOS 使用 Docker 安装，因此，本文在 Parallels Desktop  Unbuntu 22.04 上用 Docker 安装 opengauss ，或者您也可以在您的云服务器用 Docker 安装 opengauss。</p>
+<p>另外，如果您成功的在 您的 macOS 上 用 Docker 运行了opengauss 5.0.0及以上的版本，希望您联系我，不吝赐教，感谢。</p>
 </blockquote>
+<h1 id="零、Unbuntu-安装-Docker"><a href="#零、Unbuntu-安装-Docker" class="headerlink" title="零、Unbuntu 安装 Docker"></a>零、Unbuntu 安装 Docker</h1><p>Docker 官网：<a target="_blank" rel="noopener" href="https://docs.docker.com/engine/install/ubuntu/">https://docs.docker.com/engine/install/ubuntu/</a></p>
+<p><del>虽然可能看不懂他在说什么，但是只要照着文档里的代码在终端按顺序敲下来，docker 就安装完了</del></p>
 <h1 id="一、搜索-opengauss-镜像-并拉取镜像"><a href="#一、搜索-opengauss-镜像-并拉取镜像" class="headerlink" title="一、搜索 opengauss 镜像 并拉取镜像"></a>一、搜索 opengauss 镜像 并拉取镜像</h1><pre class="line-numbers language-zsh" data-language="zsh"><code class="language-zsh">docker search opengauss<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p><img src="/2024/03/05/opengauss-docker-build/Pasted%20image%2020240305092313.png" alt="搜索 opengauss 镜像"></p>
@@ -548,7 +550,7 @@
 
 docker ps
 
-docker exec -it {xx}  bash<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+docker exec -it {xx}  /bin/bash<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>其中 {xx} 是 ps 命令查看到当前 container 的头两个字符（如图当前是 108957e6721c 那么我这里就输入 <code>docker exec -it 10  bash</code> ）</p>
 <p><img src="/2024/03/05/opengauss-docker-build/Pasted%20image%2020240305102613.png" alt="三步走启动 Docker"></p>
@@ -1143,7 +1145,7 @@ docker exec -it {xx}  bash<span aria-hidden="true" class="line-numbers-rows"><sp
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">4.6k</span>&nbsp;字
+                class="white-color">4.7k</span>&nbsp;字
             
             
             

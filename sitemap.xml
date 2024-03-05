@@ -156,13 +156,6 @@
   </url>
   
   <url>
-    <loc>https://tianci-king.github.io/tags/Java/</loc>
-    <lastmod>2024-03-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://tianci-king.github.io/tags/MacBook/</loc>
     <lastmod>2024-03-05</lastmod>
     <changefreq>weekly</changefreq>
@@ -171,6 +164,20 @@
   
   <url>
     <loc>https://tianci-king.github.io/tags/Smartctl/</loc>
+    <lastmod>2024-03-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://tianci-king.github.io/tags/Java/</loc>
+    <lastmod>2024-03-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://tianci-king.github.io/tags/Swap/</loc>
     <lastmod>2024-03-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -192,13 +199,6 @@
   
   <url>
     <loc>https://tianci-king.github.io/tags/SQL/</loc>
-    <lastmod>2024-03-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://tianci-king.github.io/tags/Swap/</loc>
     <lastmod>2024-03-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
