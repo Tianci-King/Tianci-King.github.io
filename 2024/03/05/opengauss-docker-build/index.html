@@ -4,7 +4,7 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="MacBook 关闭虚拟内存(交换内存 SwapMemory), 秋風生渭水，落葉滿長安">
+    <meta name="keywords" content="Unbuntu22.04 使用 Docker 安装 OpenGauss, 秋風生渭水，落葉滿長安">
     <meta name="description" content="秋風生渭水，落葉滿長安">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>MacBook 关闭虚拟内存(交换内存 SwapMemory) | TiancyのBlog</title>
+    <title>Unbuntu22.04 使用 Docker 安装 OpenGauss | TiancyのBlog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -316,12 +316,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">MacBook 关闭虚拟内存(交换内存 SwapMemory)</h1>
+                    <h1 class="description center-align post-title">Unbuntu22.04 使用 Docker 安装 OpenGauss</h1>
                 </div>
             </div>
         </div>
@@ -437,12 +437,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/MacBook/">
-                                <span class="chip bg-color">MacBook</span>
+                            <a href="/tags/OpenGauss/">
+                                <span class="chip bg-color">OpenGauss</span>
                             </a>
                         
-                            <a href="/tags/Swap/">
-                                <span class="chip bg-color">Swap</span>
+                            <a href="/tags/Docker/">
+                                <span class="chip bg-color">Docker</span>
+                            </a>
+                        
+                            <a href="/tags/SQL/">
+                                <span class="chip bg-color">SQL</span>
                             </a>
                         
                     </div>
@@ -453,8 +457,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/MAC%E8%B0%83%E6%95%99/" class="post-category">
-                                MAC调教
+                            <a href="/categories/%E5%90%8E%E7%AB%AF%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                后端学习
                             </a>
                         
                     </div>
@@ -466,21 +470,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-10-13
+                    2024-03-05
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-10-13
+                    2024-03-05
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    948
+                    783
                 </div>
                 
 
@@ -511,33 +515,66 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <blockquote>
-<p>由于 MacBook 激进的 SWAP 策略 和 unix 特有的内存管理模式，导致 MacBook 在轻量使用情况下仍然占用大量内存，且会对 SSD 进行 SWAP 过量擦写硬盘，在高强度使用时，SWAP 擦写更频繁，导致电脑 SSD 寿命大幅下降</p>
+<p>如果您是 macOS 用户，又如果您恰好选修的一门 数据库原理 的课程需要使用 opengauss 数据库，又如果您恰好在 mac 上有 linux 环境并对 Docker 操作略微熟悉。那么您可以花费 5 分钟左右的时间照着本文做，在 macOS 上搭建 opengauss 以便学习使用。</p>
+<p>另外，作者与好朋友亲测OpenGauss 的 ARM Docker 镜像 在 macOS 上无法使用，请不要浪费您宝贵的时间，尝试在 macOS 使用 Docker 安装，因此，本文在 Parallels Desktop  Unbuntu 22.04 上用 Docker 安装 OpenGauss 。</p>
+<p>如果您成功在 macOS 上 用 Docker 运行了opengauss 5.0.0及以上的版本，不吝赐教，感谢。</p>
 </blockquote>
-<h1 id="为什么建议关闭？"><a href="#为什么建议关闭？" class="headerlink" title="为什么建议关闭？"></a>为什么建议关闭？</h1><p>听说M1有SSD磨损的问题。</p>
-<p>我在了解之后，就把虚拟内存关掉了。但在我关闭后，打开电脑奇怪的发现虚拟内存还在使用，并且还是一直保持2GB左右，半个月不到就2TB了，我表示很慌。在第二天我打开电脑准备工作时，习惯性打开活动监视器(command + 空格)，发现已使用的交换内存为0字节，我特别高兴。</p>
-<p>但在我打开3个idea窗口时，分别运行了1个Springboot的项目和2个node项目时，习惯性查看活动监视器，发现又上升到了2GB，也就是说，关闭虚拟内存和启动虚拟内存是不一样的效果。</p>
-<p>1.启动虚拟内存(默认)：不管怎么样都会使用虚拟内存，除非你的内存特别大，目的是为了防止在突然打开一个超大的文件时，导致需要重新处理内存与虚拟内存。所以默认使用虚拟内存，尽量让出大部分物理内存。</p>
-<p>2.关闭虚拟内存(需要手动)：默认不使用虚拟内存，但经过我观察，<strong>似乎是超过预警阈值(内存GB-2GB的样子)就会开始使用虚拟内存，我猜测目的是为了系统的稳定性</strong></p>
-<p>也就是说，即使关闭了虚拟内存，也不会影响系统稳定性，<strong>因为超过阈值又会继续使用虚拟内存</strong>。<strong>但关闭后就可以在没必要的情况下使用虚拟内存</strong>。其实效果也不是很好，因为我打开电脑一定就是打开idea搞开发，所以每天都还是会使用大量虚拟内存。</p>
-<h1 id="如何关闭虚拟内存"><a href="#如何关闭虚拟内存" class="headerlink" title="如何关闭虚拟内存"></a>如何关闭虚拟内存</h1><p>为缓解 MacBook 激进的 SWAP 策略，在内存有余量的情况下，可以关闭虚拟内存，不对 SSD 进行硬盘的 SWAP ，以延长电脑使用寿命，具体操作如下：</p>
+<h1 id="一、搜索-opengauss-镜像-并拉取镜像"><a href="#一、搜索-opengauss-镜像-并拉取镜像" class="headerlink" title="一、搜索 opengauss 镜像 并拉取镜像"></a>一、搜索 opengauss 镜像 并拉取镜像</h1><pre class="line-numbers language-zsh" data-language="zsh"><code class="language-zsh">docker search opengauss<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><img src="/2024/03/05/opengauss-docker-build/Pasted%20image%2020240305092313.png" alt="Pasted image 20240305092313"></p>
+<p> 这里可以选择 star 数比较多的 <code>enmotech/opengauss</code> ，也可以选择官方的 <code>opengauss/opengauss</code> ，我这里选择的是 <code>opengauss/opengauss 5.0.0</code> 但是后面发现官方的这个镜像是轻量版，无法切换到 omm 用户，因此推荐大家还是安装 <code>enmotech/opengauss</code> ：</p>
+<pre class="line-numbers language-zsh" data-language="zsh"><code class="language-zsh">docker pull enmotech/opengauss:5.0.0<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><img src="/2024/03/05/opengauss-docker-build/Pasted%20image%2020240305092554.png" alt="Pasted image 20240305092554"></p>
+<p>等待下载完成~</p>
+<h1 id="二、配置-compose-yml-文件并启动-docker"><a href="#二、配置-compose-yml-文件并启动-docker" class="headerlink" title="二、配置 compose.yml 文件并启动 docker"></a>二、配置 compose.yml 文件并启动 docker</h1><p><img src="/2024/03/05/opengauss-docker-build/Pasted%20image%2020240305092827.png" alt="Pasted image 20240305092827"></p>
+<p>在硬盘中新建文件夹并新建如图的文件和空文件夹，opengauss 文件夹是用于存放 data 数据文件的，我们暂时不用动它，接下来我们来配置 <code>compose.yml</code> 文件：</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">version</span><span class="token punctuation">:</span> <span class="token string">'5.0.0'</span>
+<span class="token key atrule">services</span><span class="token punctuation">:</span>
+  <span class="token key atrule">opengauss</span><span class="token punctuation">:</span>
+    <span class="token key atrule">container_name</span><span class="token punctuation">:</span> opengauss
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> enmotech/opengauss<span class="token punctuation">:</span>5.0.0
+    <span class="token key atrule">environment</span><span class="token punctuation">:</span>
+      <span class="token key atrule">GS_PASSWORD</span><span class="token punctuation">:</span> Wtc@7130
+      <span class="token key atrule">TZ</span><span class="token punctuation">:</span> Asia/Shanghai
+    <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token string">"5432:5432"</span>
+    <span class="token key atrule">privileged</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+    <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> ./opengauss/data<span class="token punctuation">:</span>/var/lib/opengauss/data<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>配置完成后，回到 终端 并 cd 到刚刚创建的 <code>compose.yml</code> 文件所在的目录中，输入：</p>
+<pre class="line-numbers language-zsh" data-language="zsh"><code class="language-zsh">docker compose up -d
+
+docker ps
+
+docker exec -it {xx}  bash<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>其中 {xx} 是 ps 命令查看到当前 container 的头两个字符（如图当前是 108957e6721c 那么我这里就输入 <code>docker exec -it 10  bash</code> ）</p>
+<p><img src="/2024/03/05/opengauss-docker-build/Pasted%20image%2020240305102613.png" alt="Pasted image 20240305102613"></p>
+<p>此时就进入 root 用户了，而后输入 ：</p>
+<pre class="line-numbers language-zsh" data-language="zsh"><code class="language-zsh">su - omm<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>切换到 omm 用户，然后输入：</p>
+<pre class="line-numbers language-zsh" data-language="zsh"><code class="language-zsh">gsql<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>即可成功进入 gsql ，愉快的使用 opengauss 了~</p>
+<p><del>当然我这里没有办法截屏，因为 macOS 做到进入 omm 用户以后就无法进入 gsql 了，直接死掉了，在  Google 上有很多人遇到相同的问题，但是大家也都没找到原因解决方案，乐</del>。</p>
+<p>后续在 PD 虚拟机上重复了上述的操作一点都没变，就可以成功的跑起来了。如图：</p>
+<p><img src="/2024/03/05/opengauss-docker-build/Pasted%20image%2020240305155856.png" alt="Pasted image 20240305155856"></p>
+<h1 id="三、链接-Navicat-Premium"><a href="#三、链接-Navicat-Premium" class="headerlink" title="三、链接 Navicat Premium"></a>三、链接 Navicat Premium</h1><p>进入 gsql 后，输入命令创建用户：</p>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">USER</span> tiancy PASSWORD <span class="token string">'Tiancy@123'</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>然后打开 Navicat Premium  - 连接 ：</p>
+<p><img src="/2024/03/05/opengauss-docker-build/Pasted%20image%2020240305160204.png" alt="Pasted image 20240305160204"></p>
 <ol>
-<li>关闭系统完整性保护机制</li>
-<li>关闭虚拟内存</li>
+<li>连接名可以随便取，就是名字而已；</li>
+<li>主机就是虚拟机的 ip 地址，通过 <code>ip -a</code> 命令查看自己虚拟机的 ip 地址，端口就是 5432 （因为在 Docker compose.yml 中我们配置了端口映射，将 opengauss 的 5432 默认端口映射到了 unbuntu 本机的 5432端口上，所以这里我们访问虚拟机的 ip:5432 就可以访问到我们的数据库）；</li>
+<li>初始化数据库名可以自己取；</li>
+<li>用户名和密码就是刚刚我们 create 的用户名和密码。</li>
 </ol>
-<h2 id="关闭系统完整性保护机制"><a href="#关闭系统完整性保护机制" class="headerlink" title="关闭系统完整性保护机制"></a>关闭系统完整性保护机制</h2><p>首先关闭系统完整性保护需要进入recovery OS，Mac M1进入模式好像不太一样。就在电脑完全关机的情况下，一直按着电源键不放，提示你继续按着电源键就可以进入，然后直到提示你正在进入恢复模式就可以放手了。</p>
-<p>选择用户输入密码后，左上角有一排的菜单，找到终端打开他，输入：</p>
-<pre class="line-numbers language-zsh" data-language="zsh"><code class="language-zsh">csrutil disable<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>我记得好像会提示什么权限转移吧，反正yes就可以了。</p>
-<h2 id="关闭虚拟内存"><a href="#关闭虚拟内存" class="headerlink" title="关闭虚拟内存"></a>关闭虚拟内存</h2><p>重启电脑后打开终端，输入：</p>
-<pre class="line-numbers language-zsh" data-language="zsh"><code class="language-zsh">sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.dynamic_pager.plist<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>然后就关闭了，使用这个指令可以查看虚拟内存使用情况：</p>
-<pre class="line-numbers language-zsh" data-language="zsh"><code class="language-zsh">sysctl vm.swapusage<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h2 id="重新开启系统完整性保护机制"><a href="#重新开启系统完整性保护机制" class="headerlink" title="重新开启系统完整性保护机制"></a>重新开启系统完整性保护机制</h2><p>到了这里你就关闭了虚拟内存，但注意，你之前关闭了系统完整性保护，我建议你重新开启，以免不必要的问题，重新进入recovery OS恢复模式，在终端输入：</p>
-<pre class="line-numbers language-none"><code class="language-none">csrutil enable<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>关闭虚拟内存不排除是否有风险，如果你每天都是负载使用MAC，关不关都无所谓的。如果你只是简单使用MAC，内存一大半没用就被使用了虚拟内存，你就可以关闭掉虚拟内存。</p>
+<p>然后就可以连上 Navicat Premium 操作你的 opengauss 数据库哩~</p>
+<p><img src="/2024/03/05/opengauss-docker-build/Pasted%20image%2020240305160639.png" alt="Pasted image 20240305160639"></p>
 
                 
             </div>
@@ -564,7 +601,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://tianci-king.github.io/2023/10/13/macbook-swap-off/">https://tianci-king.github.io/2023/10/13/macbook-swap-off/</a>
+                    <a href="https://tianci-king.github.io/2024/03/05/opengauss-docker-build/">https://tianci-king.github.io/2024/03/05/opengauss-docker-build/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -602,12 +639,16 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/MacBook/">
-                                    <span class="chip bg-color">MacBook</span>
+                                <a href="/tags/OpenGauss/">
+                                    <span class="chip bg-color">OpenGauss</span>
                                 </a>
                             
-                                <a href="/tags/Swap/">
-                                    <span class="chip bg-color">Swap</span>
+                                <a href="/tags/Docker/">
+                                    <span class="chip bg-color">Docker</span>
+                                </a>
+                            
+                                <a href="/tags/SQL/">
+                                    <span class="chip bg-color">SQL</span>
                                 </a>
                             
                         </div>
@@ -777,29 +818,88 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2023/10/13/macbook-ssd-check/">
+                <a href="/2024/03/05/opengauss-docker-build/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="MacBook 查询SSD硬盘读写量">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="Unbuntu22.04 使用 Docker 安装 OpenGauss">
                         
-                        <span class="card-title">MacBook 查询SSD硬盘读写量</span>
+                        <span class="card-title">Unbuntu22.04 使用 Docker 安装 OpenGauss</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            都是 MacBook Swap 惹的祸~
+                            加油 HUAWEI，加油 China😇
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-10-13
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-03-05
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%90%8E%E7%AB%AF%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                    后端学习
+                                </a>
+                            
+                            
                         </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/OpenGauss/">
+                        <span class="chip bg-color">OpenGauss</span>
+                    </a>
+                    
+                    <a href="/tags/Docker/">
+                        <span class="chip bg-color">Docker</span>
+                    </a>
+                    
+                    <a href="/tags/SQL/">
+                        <span class="chip bg-color">SQL</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2024/02/01/java-multi-version-switching-trick/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="Java多版本切换">
+                        
+                        <span class="card-title">Java多版本切换</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            一键切换本机 Java 环境，很难不爱
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-02-01
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -815,65 +915,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/MacBook/">
-                        <span class="chip bg-color">MacBook</span>
-                    </a>
-                    
-                    <a href="/tags/Smartctl/">
-                        <span class="chip bg-color">Smartctl</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2023/09/03/fix-eslint-in-webstorm/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="WebStorm快速配置EsLint">
-                        
-                        <span class="card-title">WebStorm快速配置EsLint</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            前端工程化之使用EsLint规范项目团队代码
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-09-03
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/" class="post-category">
-                                    前端学习
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/EsLint/">
-                        <span class="chip bg-color">EsLint</span>
-                    </a>
-                    
-                    <a href="/tags/WebStorm/">
-                        <span class="chip bg-color">WebStorm</span>
+                    <a href="/tags/Java/">
+                        <span class="chip bg-color">Java</span>
                     </a>
                     
                 </div>
