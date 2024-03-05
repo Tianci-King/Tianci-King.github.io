@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://tianci-king.github.io/2024/02/01/java-multi-version-switching-trick/</loc>
+    <loc>https://tianci-king.github.io/2024/03/05/opengauss-docker-build/</loc>
     
     <lastmod>2024-03-05</lastmod>
     
@@ -11,7 +11,7 @@
   </url>
   
   <url>
-    <loc>https://tianci-king.github.io/2024/03/05/opengauss-docker-build/</loc>
+    <loc>https://tianci-king.github.io/2024/02/01/java-multi-version-switching-trick/</loc>
     
     <lastmod>2024-03-05</lastmod>
     
@@ -177,13 +177,6 @@
   </url>
   
   <url>
-    <loc>https://tianci-king.github.io/tags/Swap/</loc>
-    <lastmod>2024-03-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://tianci-king.github.io/tags/OpenGauss/</loc>
     <lastmod>2024-03-05</lastmod>
     <changefreq>weekly</changefreq>
@@ -199,6 +192,13 @@
   
   <url>
     <loc>https://tianci-king.github.io/tags/SQL/</loc>
+    <lastmod>2024-03-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://tianci-king.github.io/tags/Swap/</loc>
     <lastmod>2024-03-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
