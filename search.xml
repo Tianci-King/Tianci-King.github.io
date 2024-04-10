@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>爬虫小记</title>
+      <link href="/2024/04/10/crawler-1/"/>
+      <url>/2024/04/10/crawler-1/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Repository"><a href="#Repository" class="headerlink" title="Repository"></a>Repository</h1><p>爬虫代码仓库地址</p><p><a href="https://github.com/Tianci-King/MediaCrawler/tree/main">https://github.com/Tianci-King/MediaCrawler/tree/main</a></p><h1 id="Contributions"><a href="#Contributions" class="headerlink" title="Contributions"></a>Contributions</h1><ol><li>feat(core): 新增控制爬虫 <code>search</code> 参数起始页面的页数start_page，原项目固定只能从第一页开始爬取</li></ol><p><img src="/2024/04/10/crawler-1/WeChat1538636d38c7620e3fdb5af1dd89b169.jpg" alt="修改 search 函数"></p><ol start="2"><li>perf(argparse): 向命令行解析器添加程序参数起始页面页数和关键字</li></ol><p>原项目的命令行解析器程序参数提供的比较少，新增了 start_page 和 keyword 接口直接在命令行填写，<strong>方便后续编写 shell 脚本自动化爬取需求</strong>。</p><p><img src="/2024/04/10/crawler-1/101161712718958_.pic_hd.jpg" alt="增加命令行解析器程序参数"></p><p>通过上述改写源码，爬取了杭州春天花景的”最热门”的200 多条数据，以及最新的 2024 年 3 月至 4 月的200 多条数据。</p><h1 id="Problems"><a href="#Problems" class="headerlink" title="Problems"></a>Problems</h1><ol><li><strong>小红书和抖音的 web 端数据量并不多</strong>，且小红书的帖子仅到 3 月左右，这个问题我发现以后到其他群里也得以考证，<strong>都遇到了同样的问题</strong>，一开始以为是爬虫程序被反爬虫风控无法爬取到 30 页以后的数据，之后搜索“杭州春花”手动下翻，大概不到 20 页就遇到“the end”，说明一共也没有 20 页，爬虫程序也无可奈何，有待突破</li></ol><p><img src="/2024/04/10/crawler-1/100241712716731_.pic.jpg" alt="小红书web端数据量过少"></p><p><img src="/2024/04/10/crawler-1/99311712715370_.pic_hd.jpg" alt="实测大概不到20次左右就划到底了"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 项目学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> crawler </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Unbuntu22.04 使用 Docker 安装 OpenGauss</title>
       <link href="/2024/03/05/opengauss-docker-build/"/>
       <url>/2024/03/05/opengauss-docker-build/</url>
