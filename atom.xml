@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
+  <follow_challenge>
+    <feedId>62033118826866694</feedId>
+    <userId>62031722683876352</userId>
+  </follow_challenge>
   <title>TiancyのBlog</title>
   <description>
-    <![CDATA[ feedId:62033118826866694+userId:62031722683876352 ]]>
+    feedId:62033118826866694+userId:62031722683876352
   </description>
   
   <subtitle>Tiancyの小屋</subtitle>
