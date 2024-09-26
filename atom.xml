@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
+  This message is used to verify that this feed (feedId:62033118826866694) belongs to me (userId:62031722683876352). Join me in enjoying the next generation information browser https://follow.is.
   <title>TiancyのBlog</title>
   
   <subtitle>Tiancyの小屋</subtitle>
@@ -279,8 +280,3 @@
   </entry>
   
 </feed>
-
-<follow_challenge>
-    <feedId>62033118826866694</feedId>
-    <userId>62031722683876352</userId>
-</follow_challenge>
