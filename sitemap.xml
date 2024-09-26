@@ -101,7 +101,7 @@
   </url>
   
   <url>
-    <loc>https://tianci-king.github.io/2024/02/01/java-multi-version-switching-trick/</loc>
+    <loc>https://tianci-king.github.io/2023/09/03/fix-eslint-in-webstorm/</loc>
     
     <lastmod>2024-09-26</lastmod>
     
@@ -110,7 +110,7 @@
   </url>
   
   <url>
-    <loc>https://tianci-king.github.io/2023/09/03/fix-eslint-in-webstorm/</loc>
+    <loc>https://tianci-king.github.io/2024/02/01/java-multi-version-switching-trick/</loc>
     
     <lastmod>2024-09-26</lastmod>
     
@@ -190,6 +190,20 @@
   </url>
   
   <url>
+    <loc>https://tianci-king.github.io/tags/WebStorm/</loc>
+    <lastmod>2024-09-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://tianci-king.github.io/tags/Java/</loc>
+    <lastmod>2024-09-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://tianci-king.github.io/tags/MacBook/</loc>
     <lastmod>2024-09-26</lastmod>
     <changefreq>weekly</changefreq>
@@ -205,20 +219,6 @@
   
   <url>
     <loc>https://tianci-king.github.io/tags/Swap/</loc>
-    <lastmod>2024-09-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://tianci-king.github.io/tags/Java/</loc>
-    <lastmod>2024-09-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://tianci-king.github.io/tags/WebStorm/</loc>
     <lastmod>2024-09-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
