@@ -220,9 +220,9 @@
     <category term="前端学习" scheme="https://tianci-king.github.io/categories/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/"/>
     
     
-    <category term="EsLint" scheme="https://tianci-king.github.io/tags/EsLint/"/>
-    
     <category term="WebStorm" scheme="https://tianci-king.github.io/tags/WebStorm/"/>
+    
+    <category term="EsLint" scheme="https://tianci-king.github.io/tags/EsLint/"/>
     
   </entry>
   
@@ -278,4 +278,8 @@
     
   </entry>
   
+  <follow_challenge>
+    <feedId>62033118826866694</feedId>
+    <userId>62031722683876352</userId>
+  </follow_challenge>
 </feed>
